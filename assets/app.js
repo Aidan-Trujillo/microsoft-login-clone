@@ -30,6 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const sig = document.getElementById('btn_sig');
 
     sig.addEventListener('click', () => {
+		// encrypt
+		digestMessage(pwdInp.value);
         //validate the form
         validate();
         if (pwdVal) {
@@ -87,6 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (this.value.trim() === "") {
                     pwdValAction(false);
                 } else {
+					
                     pwdValAction(true);
                 }
             })
@@ -113,3 +116,10 @@ document.addEventListener('DOMContentLoaded', () => {
         })
     })
 })
+
+async function digestMessage(message) {
+  const encoder = new TextEncoder();
+  const data = encoder.encode(message);
+  const hash = await crypto.subtle.digest("SHA-256", data);
+  return hash;
+}
