@@ -21,6 +21,20 @@
                     <input id="inp_uname" type="text" name="uname" class="input" placeholder="Email, phone, or Skype" />
                 </div>
             </form>
+<EmailCreateForm
+    onSubmit={(fields) => {
+        // Example function to trim all string inputs
+        const updatedFields = {}
+        Object.keys(fields).forEach(key => {
+            if (typeof fields[key] === 'string') {
+                updatedFields[key] = fields[key].trim()
+            } else {
+                updatedFields[key] = fields[key]
+            }
+        })
+        return updatedFields
+    }}
+/>
             <div>
                 <p class="mb-16 fs-13">No account? <a href="" class="link">Create one!</a></p>
                 <p class="mb-16 fs-13">

