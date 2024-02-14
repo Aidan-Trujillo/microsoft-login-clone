@@ -10,6 +10,9 @@ import "@aws-amplify/ui-react/styles.css";
 import { studioTheme } from "./ui-components";
 
 Amplify.configure(awsconfig);
+import {
+ EmailCreateForm 
+} from './ui-components';
 
 document.addEventListener('DOMContentLoaded', () => {
     const unReq = "Enter a valid email address, phone number, or Skype name."
